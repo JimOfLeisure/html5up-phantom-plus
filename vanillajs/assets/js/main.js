@@ -61,8 +61,9 @@ function enhanceForms() {
 
     // Trim leading and trailing whitespace in textarea on focus change and ctrl-enter
     const trimElement = element => (element.value = element.value.trim());
-    textarea.addEventListener('blur', event => trimElement(event.target));
-    textarea.addEventListener('focus', event => trimElement(event.target));
+    ['blur', 'focus'].forEach(eventName =>
+      textarea.addEventListener(eventName, event => trimElement(event.target))
+    );
     textarea.addEventListener('keydown', event => {
       if (event.keyCode === 13 && event.ctrlKey) {
         event.preventDefault();
@@ -71,7 +72,18 @@ function enhanceForms() {
       }
     });
 
-    // TODO: auto-size
+    // Auto-size the height of the textarea
+    // FIXME: This is not shrinking when the field is cleared like the original does
+    const setHeight = element =>
+      (element.style.height = element.scrollHeight + 'px');
+    // Set height on initial load
+    setHeight(textarea);
+    // Monitor events to resize
+    ['input', 'blur', 'focus'].forEach(eventName =>
+      textarea.addEventListener(eventName, event => setHeight(event.target))
+    );
+    // TODO: handle keyCode 9
+    // TODO: Limit height for mobile?
   });
 }
 
