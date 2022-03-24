@@ -3,7 +3,7 @@ An decently-successful-so-far attempt to eliminate jQuery from
 
 ## Using
 
-I don't yet have a build function setup yet. For now, just copy the
+I don't yet have a build function set up yet. For now, just copy the
 html5up folder to where you want it, then copy the vanillajs folder
 over it. They have the same file structure, and the new files will
 overwrite the originals. Then you need to run SASS to rebuild and
