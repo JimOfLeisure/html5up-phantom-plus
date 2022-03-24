@@ -62,6 +62,11 @@ function enableMenu(body) {
   // Menu.
   const menu = document.querySelector('#menu');
   wrapInner(menu, 'div', 'class', 'inner');
+  const menuMove = {
+    hide: () => body.classList.remove('is-menu-visible'),
+    show: () => body.classList.add('is-menu-visible'),
+    toggle: () => body.classList.toggle('is-menu-visible'),
+  };
 
   // Not sure what the $menu._lock bit is about in original
   // Appears to only act every other invocation, but maybe
@@ -74,20 +79,37 @@ function enableMenu(body) {
   //   Not sure why it's not just there in the first place
   body.appendChild(menu);
 
-  body.addEventListener('click', event => {
-    if (event.target.href.slice(-5) === '#menu') {
-      event.preventDefault();
-      event.stopPropagation();
-      body.classList.toggle('is-menu-visible');
-      return;
-    }
-    if (event.target === menu) {
-      event.stopPropagation();
-    }
-  });
+  // This adds the animated X to close the menu
   const close = document.createElement('a');
   close.href = '#menu';
   close.classList.add('close');
   close.innerText = 'Close';
   menu.appendChild(close);
+
+  // Add menu toggle to appropriate link targets
+  Array.from(document.querySelectorAll('[href="#menu"]')).forEach(el =>
+    el.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      menuMove.toggle();
+    })
+  );
+
+  // Prevents unhandled clicks in #menu from propagating to body to close menu
+  menu.addEventListener('click', event => {
+    event.stopPropagation();
+    // The original code on link click stops propagation and changes the
+    // location after a delay. I'm not gonna do that.
+  });
+
+  body.addEventListener('click', event => {
+    menuMove.hide();
+  });
+
+  // Close menu on ESC key pressed
+  body.addEventListener('keydown', event => {
+    if (event.keyCode === 27) {
+      menuMove.hide();
+    }
+  });
 }
