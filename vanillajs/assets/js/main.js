@@ -9,15 +9,16 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const body = document.querySelector('body');
   defineBreakPoints();
-  removePreload();
+  removePreload(body);
   enhanceForms();
-  enableMenu;
+  enableMenu(body);
 });
 
-// This function from https://codepen.io/kenjiroart/pen/qBmONJ
-//   It is meant to replace the functionality of jQuery's $.wrapInner
 function wrapInner(parent, wrapper, attribute, attributevalue) {
+  // This function from https://codepen.io/kenjiroart/pen/qBmONJ
+  //   It is meant to replace the functionality of jQuery's $.wrapInner
   if (typeof wrapper === 'string') {
     wrapper = document.createElement(wrapper);
   }
@@ -37,11 +38,10 @@ function defineBreakPoints() {
   // FIXME: skipping for now
 }
 
-function removePreload() {
+function removePreload(body) {
   // Play initial animations on page load.
   //   Original theme removes is-preload class from body 100ms after load
   //   Appears to change styling of tiles and hold animations
-  const body = document.querySelector('body');
   body.classList.remove('is-preload');
 }
 
@@ -58,7 +58,21 @@ function enhanceForms() {
   // FIXME: Skipping for now
 }
 
-function enableMenu() {
+function enableMenu(body) {
   // Menu.
-  const menu = document.querySelector('#main');
+  const menu = document.querySelector('#menu');
+  wrapInner(menu, 'div', 'class', 'inner');
+
+  // Not sure what the $menu._lock bit is about in original
+  // Appears to only act every other invocation, but maybe
+  // It means something different in jQuery
+  // Will try without the lock stuff
+  body.addEventListener('click', event => {
+    if (event.target.href.slice(-5) === '#menu') {
+      event.preventDefault();
+      event.stopPropagation();
+      body.classList.toggle('is-menu-visible');
+      return;
+    }
+  });
 }
