@@ -1,7 +1,7 @@
 /*
     Copyright 2022 Jim "JimOfLeisure" Nelson
     https://github.com/JimOfLeisure/html5up-phantom-plus | @JimOfLeisure
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Free for personal and commercial use under the CCA 3.0 license (https://creativecommons.org/licenses/by/3.0/)
 
     This file is a vanillajs rewrite of main.js from:
     Phantom by HTML5 UP
