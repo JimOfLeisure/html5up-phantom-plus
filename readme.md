@@ -13,7 +13,6 @@ overwrite the CSS files.
 
 - Most of the behavior of the original code is now replicated in 80ish lines of actual code without using jQuery or other third-party libraries. (No shade at the original creator; JavaScript and CSS have changed a lot in the 7 years since theme publication.)
 - The script _does_ alter the DOM on document ready when run, so if you use a DOM-altering library, either replace that functionality or ensure your library waits to allow this script to alter the DOM before it goes to work. It moves `#menu` to the bottom of the body. (Why though? Seems to be needed for styling, but why is it not there in the first place?) It also adds inner wrapper `div`s to the menu and textareas, presumably for styling/animating.
-- The menu works!
 - I modified CSS to
   use `@media(hover: ...)` instead of using JS to sniff the browser
   type
@@ -30,7 +29,6 @@ overwrite the CSS files.
 If you find that these exclusions create new problems the original code doesn't have, please submit an issue.
 
 - Support legacy browsers: IE is toast. Also the [CSS hover media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) is a fairly recent addition and may leave modern-but-not-up-to-date browsers not detecting touch/mobile for restyling.
-- Debounce menu move clicks: The original jQuery uses `$menu._locked` and `$menu.lock()` on menu show/hide/toggle calls. This seems to be a 350ms debounce for menu action calls.
 - Alter link-in-menu behavior: The original code prevents links from being clicked, waits 350ms and then changes the location with jQuery.
 - Port util.js: The original code includes util.js, a jQuery function collection which as far as I can tell is not ever used in this theme.
 - Use breakpoints: A call is made to theme creator [@ajlkn's responsive-tools](https://github.com/ajlkn/responsive-tools) to define breakpoints, but no actions or queries are being called on it, so it does nothing in this theme.

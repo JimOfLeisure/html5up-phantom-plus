@@ -52,12 +52,20 @@ function enableMenu(body) {
   // Menu.
   const menu = document.querySelector('#menu');
   wrapInner(menu, 'div', 'class', 'inner');
+
+  let menuIsDebouncing = false;
+  const menuDebounced = () => {
+    if (!menuIsDebouncing) {
+      setTimeout(() => (menuIsDebouncing = false), 350);
+      menuIsDebouncing = true;
+      return true;
+    }
+    return false;
+  };
   const menuMove = {
-    // The original code debounces these function calls for 350ms
-    //   I haven't done that here
-    hide: () => body.classList.remove('is-menu-visible'),
-    show: () => body.classList.add('is-menu-visible'),
-    toggle: () => body.classList.toggle('is-menu-visible'),
+    hide: () => menuDebounced() && body.classList.remove('is-menu-visible'),
+    show: () => menuDebounced() && body.classList.add('is-menu-visible'),
+    toggle: () => menuDebounced() && body.classList.toggle('is-menu-visible'),
   };
 
   // The original script moves #menu to the bottom of body
