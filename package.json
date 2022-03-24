@@ -1,5 +1,5 @@
 {
-  "name": "html5up-phantom",
+  "name": "html5up-phantom-plus",
   "version": "1.0.0",
   "description": "An attempt to eliminate jQuery from [HTML5UP's Phantom theme](https://html5up.net/phantom).",
   "main": "index.js",
