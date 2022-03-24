@@ -51,17 +51,27 @@ function removePreload(body) {
 
 function enhanceForms() {
   // Forms.
-  //   This finds one(?) form and then manipulates all the textareas
-  //     to allow auto resizing, apparently
-  //   It also gets a reference to submit buttons but doesn't seem to use it
-  //   It also wraps things in new divs
-  // FIXME: Skipping for now
+  // Find all textareas in forms and loop through each
   Array.from(document.querySelectorAll('form textarea')).forEach(textarea => {
-    console.log(textarea);
+    // Add wrapper div, set some style and attribute
     wrapOuter(textarea, 'div', 'class', 'textarea-wrapper');
     textarea.setAttribute('rows', '1');
     textarea.style.overflow = 'hidden';
     textarea.style.resize = 'none';
+
+    // Trim leading and trailing whitespace in textarea on focus change and ctrl-enter
+    const trimElement = element => (element.value = element.value.trim());
+    textarea.addEventListener('blur', event => trimElement(event.target));
+    textarea.addEventListener('focus', event => trimElement(event.target));
+    textarea.addEventListener('keydown', event => {
+      if (event.keyCode === 13 && event.ctrlKey) {
+        event.preventDefault();
+        event.stopPropagation();
+        trimElement(event.target);
+      }
+    });
+
+    // TODO: auto-size
   });
 }
 
