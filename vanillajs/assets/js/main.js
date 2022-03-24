@@ -29,6 +29,16 @@ function wrapInner(parent, wrapper, attribute, attributevalue) {
   }
 }
 
+function wrapOuter(element, wrapper, attribute, attributevalue) {
+  // Adapting from wrapInner
+  if (typeof wrapper === 'string') {
+    wrapper = document.createElement(wrapper);
+  }
+  attribute && wrapper.setAttribute(attribute, attributevalue);
+  // To ensure the wrapper is in the same sibling-related position as element
+  element.parentElement.insertBefore(wrapper, element);
+}
+
 function removePreload(body) {
   // Play initial animations on page load.
   //   Wait 100ms to remove is-preload to ensure DOM has had time to update
@@ -46,6 +56,10 @@ function enhanceForms() {
   //   It also gets a reference to submit buttons but doesn't seem to use it
   //   It also wraps things in new divs
   // FIXME: Skipping for now
+  Array.from(document.querySelectorAll('form textarea')).forEach(textarea => {
+    console.log(textarea);
+    wrapOuter(textarea, 'div', 'class', 'textarea-wrapper');
+  });
 }
 
 function enableMenu(body) {
