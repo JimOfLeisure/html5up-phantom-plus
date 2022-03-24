@@ -77,6 +77,8 @@ function enableMenu(body) {
   body.appendChild(menu);
 
   // This adds the animated X icon to close the menu
+  //   I don't know why it's being added with script
+  //   I'm just aping the original code so far
   const close = document.createElement('a');
   close.href = '#menu';
   close.classList.add('close');
