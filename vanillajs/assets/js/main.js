@@ -83,6 +83,13 @@ function enhanceForms() {
       textarea.addEventListener(eventName, event => setHeight(event.target))
     );
     // TODO: handle keyCode 9
+    // Select text on tab-out
+    // FIXME: Not working, but it's not working in the original, either
+    textarea.addEventListener(
+      'keyup',
+      //   event => event.code === 9 && event.target.select()
+      event => event.code === 9 && console.log(event.target)
+    );
     // TODO: Limit height for mobile?
   });
 }
