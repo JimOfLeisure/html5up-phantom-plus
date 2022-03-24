@@ -11,7 +11,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
-  defineBreakPoints();
   enhanceForms();
   enableMenu(body);
   removePreload(body);
@@ -28,15 +27,6 @@ function wrapInner(parent, wrapper, attribute, attributevalue) {
   while (parent.firstChild !== wrapper) {
     wrapper.appendChild(parent.firstChild);
   }
-}
-
-function defineBreakPoints() {
-  // Breakpoints.
-  //   set breakpoints using 3rd-party library
-  //     appears to like media queries
-  //     triggers events at screen sizes set by this library
-  //     unsure if this project is using any of those events
-  // FIXME: skipping for now
 }
 
 function removePreload(body) {

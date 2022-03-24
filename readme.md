@@ -17,15 +17,11 @@ overwrite the CSS files.
 - I modified CSS to
   use `@media(hover: ...)` instead of using JS to sniff the browser
   type
-- I just noticed that theme creator [@ajlkn's responsive-tools](https://github.com/ajlkn/responsive-tools) is used in the original code. The browser and breakpoints js in particular, and now I can see if any of the SASS is used here. I replaced the browser.min.js functionality already, and so far I haven't found that breakpoints.min.js is doing anything in this theme.
 
 ### Things I haven't gotten to yet
 
 - Am not yet modifying textareas like the original code
   does, so auto-resizing doesn't yet work
-- Breakpoints: The original code is setting breakpoints with a
-  library. I don't know if this is actually doing anything, will
-  eventually figure it out
 - I have not yet tried to
   add a build script for a usable theme package
 
@@ -37,6 +33,7 @@ If you find that these exclusions create new problems the original code doesn't 
 - Debounce menu move clicks: The original jQuery uses `$menu._locked` and `$menu.lock()` on menu show/hide/toggle calls. This seems to be a 350ms debounce for menu action calls.
 - Alter link-in-menu behavior: The original code prevents links from being clicked, waits 350ms and then changes the location with jQuery.
 - Port util.js: The original code includes util.js, a jQuery function collection which as far as I can tell is not ever used in this theme.
+- Use breakpoints: A call is made to theme creator [@ajlkn's responsive-tools](https://github.com/ajlkn/responsive-tools) to define breakpoints, but no actions or queries are being called on it, so it does nothing in this theme.
 
 ## Folder structure
 
