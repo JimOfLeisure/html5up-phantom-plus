@@ -9,6 +9,8 @@ over it. They have the same file structure, and the new files will
 overwrite the originals. Then you need to run SASS to rebuild and
 overwrite the CSS files.
 
+It may also work to (**untested**) take my main.js and \_tiles.scss and replace the originals in an existing Phantom-themed site, but be sure everything is backed up, and do it on a test site first and verify all functionality. You may need to compile all the SASS again after updating with my modified \_tile.scss. And if you wanted you should then be able to remove references to jquery, browser, and breakpoints in the html file script src tags.
+
 ## Status
 
 - Most of the behavior of the original code is now replicated in 80ish lines of actual code without using jQuery or other third-party libraries. (No shade at the original creator; JavaScript and CSS have changed a lot in the 7 years since theme publication.)
@@ -28,6 +30,7 @@ overwrite the CSS files.
 
 If you find that these exclusions create new problems the original code doesn't have, please submit an issue.
 
+- "Improve" the theme. I'm not sure why JavaScript needs to manipulate the DOM here. It moves the `#menu` to the bottom of the body and adds wrapper divs to certain elements. Part of me wants to purify/simplify that, but I'm not a theme designer, and I intend for this theme to be sharable, and I guess I want it backward-compatible with the original, too, so you could drop my main.js and \_tiles.scss in place of an existing Phantom-themed site and have it work the same. So It will behave the same way, at least for the vanillajs version.
 - Support legacy browsers: IE is toast. Also the [CSS hover media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) is a fairly recent addition and may leave modern-but-not-up-to-date browsers not detecting touch/mobile for restyling.
 - Alter link-in-menu behavior: The original code prevents links from being clicked, waits 350ms and then changes the location with jQuery.
 - Port util.js: The original code includes util.js, a jQuery function collection which as far as I can tell is not ever used in this theme.
