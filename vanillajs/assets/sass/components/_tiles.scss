@@ -162,7 +162,8 @@
 				}
 			}
 
-			body:not(.is-touch) & {
+			// Not touch device, or more speficially able to conveniently hover
+			@media(hover: hover) {
 				&:hover {
 					> .image {
 						@include vendor('transform', 'scale(1.1)');
@@ -196,7 +197,8 @@
 			}
 		}
 
-		body.is-touch & {
+		// Touch, or more specifically primary pointing device can't conveniently hover
+		@media(hover: none) {
 			article {
 				.content {
 					max-height: 15em;

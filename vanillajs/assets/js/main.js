@@ -24,3 +24,6 @@ const body = document.querySelector('body');
 document.addEventListener('DOMContentLoaded', () =>
   body.classList.remove('is-preload')
 );
+
+// Original sets is-touch based on browser detection
+// Will replace that with @media(hover: none) in scss instead
