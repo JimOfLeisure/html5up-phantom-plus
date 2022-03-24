@@ -67,6 +67,13 @@ function enableMenu(body) {
   // Appears to only act every other invocation, but maybe
   // It means something different in jQuery
   // Will try without the lock stuff
+
+  // The original script moves #menu to the bottom of body
+  // why though?
+  //   Ok, the styles only work right when it's down there
+  //   Not sure why it's not just there in the first place
+  body.appendChild(menu);
+
   body.addEventListener('click', event => {
     if (event.target.href.slice(-5) === '#menu') {
       event.preventDefault();
@@ -74,5 +81,13 @@ function enableMenu(body) {
       body.classList.toggle('is-menu-visible');
       return;
     }
+    if (event.target === menu) {
+      event.stopPropagation();
+    }
   });
+  const close = document.createElement('a');
+  close.href = '#menu';
+  close.classList.add('close');
+  close.innerText = 'Close';
+  menu.appendChild(close);
 }
