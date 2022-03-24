@@ -11,30 +11,29 @@ overwrite the CSS files.
 
 ## Status
 
+- Most of the behavior of the original code is now replicated in 80ish lines of actual code without using jQuery or other third-party libraries. (No shade at the original creator; JavaScript and CSS have changed a lot in the 7 years since theme publication.)
+- The script _does_ alter the DOM on document ready when run, so if you use a DOM-altering library, either replace that functionality or ensure your library waits to allow this script to alter the DOM before it goes to work. It moves `#menu` to the bottom of the body. (Why though? Seems to be needed for styling, but why is it not there in the first place?) It also adds inner wrapper `div`s to the menu and textareas, presumably for styling/animating.
 - The menu works!
-  - I didn't try to duplicate the \_lock functionality. I'll have
-    to figure out what that is doing
-  - I did not preventDefault for
-    menu anchor links and change location with a setTimeout. Not sure
-    what that's about.
-- I did not add setTimeOuts for removing the `is-preload` class on
-  document ready; I just remove it with no delay
 - I modified CSS to
   use `@media(hover: ...)` instead of using JS to sniff the browser
   type
 
 ### Things I haven't gotten to yet
 
-- Breakpoints
-- The original code is setting breakpoints with a
-  library. I don't know if this is actually doing anything, will
-  eventually figure it out
-- Didn't look to see if util.js needs
-  porting
 - Am not yet modifying textareas like the original code
   does, so auto-resizing doesn't yet work
+- Breakpoints: The original code is setting breakpoints with a
+  library. I don't know if this is actually doing anything, will
+  eventually figure it out
 - I have not yet tried to
   add a build script for a usable theme package
+
+### Things I don't currently intend to do
+
+- Delay enabling animations: The original code waits 100ms to remove the `is-preload` class from the body.
+- Debounce menu move clicks: The original jQuery uses `$menu._locked` and `$menu.lock()` on menu show/hide/toggle calls. This seems to be a 350ms debounce for menu action calls.
+- Alter link-in-menu behavior: The original code prevents links from being clicked, waits 350ms and then changes the location with jQuery.
+- Port util.js: The original code includes util.js, a jQuery function collection which as far as I can tell is not ever used in this theme.
 
 ## Folder structure
 
