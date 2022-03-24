@@ -17,6 +17,7 @@ overwrite the CSS files.
 - I modified CSS to
   use `@media(hover: ...)` instead of using JS to sniff the browser
   type
+- I just noticed that theme creator [@ajlkn's responsive-tools](https://github.com/ajlkn/responsive-tools) is used in the original code. The browser and breakpoints js in particular, and now I can see if any of the SASS is used here. I replaced the browser.min.js functionality already, and so far I haven't found that breakpoints.min.js is doing anything in this theme.
 
 ### Things I haven't gotten to yet
 
