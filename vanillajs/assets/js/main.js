@@ -11,9 +11,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.querySelector('body');
   defineBreakPoints();
-  removePreload(body);
   enhanceForms();
   enableMenu(body);
+  removePreload(body);
 });
 
 function wrapInner(parent, wrapper, attribute, attributevalue) {
@@ -40,9 +40,8 @@ function defineBreakPoints() {
 
 function removePreload(body) {
   // Play initial animations on page load.
-  //   Original theme removes is-preload class from body 100ms after load
-  //   Appears to change styling of tiles and hold animations
-  body.classList.remove('is-preload');
+  //   Wait 100ms to remove is-preload to ensure DOM has had time to update
+  setTimeout(() => body.classList.remove('is-preload'), 100);
 }
 
 // Touch?

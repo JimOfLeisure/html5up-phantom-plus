@@ -30,7 +30,9 @@ overwrite the CSS files.
 
 ### Things I don't currently intend to do
 
-- Delay enabling animations: The original code waits 100ms to remove the `is-preload` class from the body.
+If you find that these exclusions create new problems the original code doesn't have, please submit an issue.
+
+- Support legacy browsers: IE is toast. Also the [CSS hover media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) is a fairly recent addition and may leave modern-but-not-up-to-date browsers not detecting touch/mobile for restyling.
 - Debounce menu move clicks: The original jQuery uses `$menu._locked` and `$menu.lock()` on menu show/hide/toggle calls. This seems to be a 350ms debounce for menu action calls.
 - Alter link-in-menu behavior: The original code prevents links from being clicked, waits 350ms and then changes the location with jQuery.
 - Port util.js: The original code includes util.js, a jQuery function collection which as far as I can tell is not ever used in this theme.
