@@ -1,2 +1,6 @@
 # Avoid reformatting original theme files
 html5up-phantom/
+
+# May avoid reformatting html and css files, too, as I don't expect to alter them much
+*.html
+*.css
