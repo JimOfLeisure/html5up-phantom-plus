@@ -1,5 +1,6 @@
 /*
     Copyright 2022 Jim "JimOfLeisure" Nelson
+    https://github.com/JimOfLeisure/html5up-phantom-plus | @JimOfLeisure
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
     This file is a vanillajs rewrite of main.js from:
@@ -62,23 +63,20 @@ function enableMenu(body) {
   const menu = document.querySelector('#menu');
   wrapInner(menu, 'div', 'class', 'inner');
   const menuMove = {
+    // The original code debounces these function calls for 350ms
+    //   I haven't done that here
     hide: () => body.classList.remove('is-menu-visible'),
     show: () => body.classList.add('is-menu-visible'),
     toggle: () => body.classList.toggle('is-menu-visible'),
   };
 
-  // Not sure what the $menu._lock bit is about in original
-  // Appears to only act every other invocation, but maybe
-  // It means something different in jQuery
-  // Will try without the lock stuff
-
   // The original script moves #menu to the bottom of body
-  // why though?
+  // Why though?
   //   Ok, the styles only work right when it's down there
   //   Not sure why it's not just there in the first place
   body.appendChild(menu);
 
-  // This adds the animated X to close the menu
+  // This adds the animated X icon to close the menu
   const close = document.createElement('a');
   close.href = '#menu';
   close.classList.add('close');
@@ -101,6 +99,7 @@ function enableMenu(body) {
     // location after a delay. I'm not gonna do that.
   });
 
+  // Hides menu when clicking on body
   body.addEventListener('click', event => {
     menuMove.hide();
   });
