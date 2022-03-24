@@ -59,6 +59,9 @@ function enhanceForms() {
   Array.from(document.querySelectorAll('form textarea')).forEach(textarea => {
     console.log(textarea);
     wrapOuter(textarea, 'div', 'class', 'textarea-wrapper');
+    textarea.setAttribute('rows', '1');
+    textarea.style.overflow = 'hidden';
+    textarea.style.resize = 'none';
   });
 }
 
