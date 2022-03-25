@@ -13,7 +13,7 @@ It may also work to (**untested**) take my main.js and \_tiles.scss and replace 
 
 ## Status
 
-- Most of the behavior of the original code is now replicated in 80ish lines of actual code without using jQuery or other third-party libraries. (No shade at the original creator; JavaScript and CSS have changed a lot in the 7 years since theme publication.)
+- Most of the behavior of the original code is now replicated in 100ish lines of actual code without using jQuery or other third-party libraries. (No shade at the original creator; JavaScript and CSS have changed a lot in the 7 years since theme publication.)
 - The script _does_ alter the DOM on document ready when run, so if you use a DOM-altering library, either replace that functionality or ensure your library waits to allow this script to alter the DOM before it goes to work. It moves `#menu` to the bottom of the body. (Why though? Seems to be needed for styling, but why is it not there in the first place?) It also adds inner wrapper `div`s to the menu and textareas, presumably for styling/animating.
 - I am using the `(hover: hover)` and `(hover: none)` media queries instead
   of browser sniffing to choose "mobile" or "touch" devices.
