@@ -9,6 +9,7 @@
   "author": "",
   "license": "CC-BY-3.0",
   "devDependencies": {
+    "react": "^17.0.2",
     "vite": "^2.8.6"
   }
 }
