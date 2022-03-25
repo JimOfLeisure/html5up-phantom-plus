@@ -247,7 +247,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2"></td>
+              <td colSpan="2"></td>
               <td>100.00</td>
             </tr>
           </tfoot>
@@ -293,7 +293,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="2"></td>
+              <td colSpan="2"></td>
               <td>100.00</td>
             </tr>
           </tfoot>
@@ -433,7 +433,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
               name="demo-priority"
               checked
             />
-            <label for="demo-priority-low">Low</label>
+            <label htmlFor="demo-priority-low">Low</label>
           </div>
           <div className="col-4 col-12-small">
             <input
@@ -441,19 +441,19 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
               id="demo-priority-normal"
               name="demo-priority"
             />
-            <label for="demo-priority-normal">Normal</label>
+            <label htmlFor="demo-priority-normal">Normal</label>
           </div>
           <div className="col-4 col-12-small">
             <input type="radio" id="demo-priority-high" name="demo-priority" />
-            <label for="demo-priority-high">High</label>
+            <label htmlFor="demo-priority-high">High</label>
           </div>
           <div className="col-6 col-12-small">
             <input type="checkbox" id="demo-copy" name="demo-copy" />
-            <label for="demo-copy">Email me a copy</label>
+            <label htmlFor="demo-copy">Email me a copy</label>
           </div>
           <div className="col-6 col-12-small">
             <input type="checkbox" id="demo-human" name="demo-human" checked />
-            <label for="demo-human">Not a robot</label>
+            <label htmlFor="demo-human">Not a robot</label>
           </div>
           <div className="col-12">
             <textarea
