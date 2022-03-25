@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../layouts/htmtup-phantom/layout';
-import TextArea from '../layouts/htmtup-phantom/textarea';
 import TileList from '../layouts/htmtup-phantom/tile-list';
 
 const IndexPage = ({ menuList }) => (

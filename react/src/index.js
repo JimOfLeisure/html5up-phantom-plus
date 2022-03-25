@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import IndexPage from './pages/index';
+import GenericPage from './pages/generic';
+import ElementDemoPage from './pages/elements';
 
 const menuList = (
   <ul>
@@ -24,7 +26,7 @@ const menuList = (
 
 ReactDOM.render(
   <React.StrictMode>
-    <IndexPage menuList={menuList}></IndexPage>
+    <GenericPage menuList={menuList}></GenericPage>
   </React.StrictMode>,
   document.getElementById('root')
 );
