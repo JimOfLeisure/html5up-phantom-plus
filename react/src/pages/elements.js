@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../layouts/htmtup-phantom/layout';
+import TextArea from '../layouts/htmtup-phantom/textarea';
 
 const ElementDemoPage = ({ menuList }) => (
   <Layout menuList={menuList}>
@@ -456,11 +457,10 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
             <label htmlFor="demo-human">Not a robot</label>
           </div>
           <div className="col-12">
-            <textarea
+            <TextArea
               name="demo-message"
               id="demo-message"
-              placeholder="Enter your message"
-              rows="6"></textarea>
+              placeholder="Enter your message"></TextArea>
           </div>
           <div className="col-12">
             <ul className="actions">
