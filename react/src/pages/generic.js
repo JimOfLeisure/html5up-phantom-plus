@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../layouts/htmtup-phantom/layout';
-import TileList from '../layouts/htmtup-phantom/tile-list';
 
 const GenericPage = ({ menuList }) => (
   <Layout menuList={menuList}>

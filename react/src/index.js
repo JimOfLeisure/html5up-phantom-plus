@@ -26,7 +26,7 @@ const menuList = (
 
 ReactDOM.render(
   <React.StrictMode>
-    <GenericPage menuList={menuList}></GenericPage>
+    <ElementDemoPage menuList={menuList}></ElementDemoPage>
   </React.StrictMode>,
   document.getElementById('root')
 );
