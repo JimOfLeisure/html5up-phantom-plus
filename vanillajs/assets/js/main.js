@@ -65,7 +65,7 @@ function enhanceForms() {
       textarea.addEventListener(eventName, event => trimElement(event.target))
     );
     textarea.addEventListener('keydown', event => {
-      if (event.keyCode === 13 && event.ctrlKey) {
+      if (event.code === 13 && event.ctrlKey) {
         event.preventDefault();
         event.stopPropagation();
         trimElement(event.target);
@@ -82,14 +82,19 @@ function enhanceForms() {
     ['input', 'blur', 'focus'].forEach(eventName =>
       textarea.addEventListener(eventName, event => setHeight(event.target))
     );
-    // TODO: handle keyCode 9
+
     // Select text on tab-out
-    // FIXME: Not working, but it's not working in the original, either
-    textarea.addEventListener(
-      'keyup',
-      //   event => event.code === 9 && event.target.select()
-      event => event.code === 9 && console.log(event.target)
-    );
+    //   This is broken, but it's broken in the original code, too
+    //   It exits the field and doesn't select
+    //   It will select the text if youchange keyup to keydown,
+    //   But then the selection is irrelevant when the focus is lost
+    //   You can make it work with keydown and event.preventDefault(),
+    //     But that prevents you from being able to exit the field with tab
+    textarea.addEventListener('keyup', event => {
+      if (event.code === 'Tab') {
+        event.target.select();
+      }
+    });
     // TODO: Limit height for mobile?
   });
 }
@@ -152,7 +157,7 @@ function enableMenu(body) {
 
   // Close menu on ESC key pressed
   body.addEventListener('keydown', event => {
-    if (event.keyCode === 27) {
+    if (event.code === 'Escape') {
       menuMove.hide();
     }
   });
