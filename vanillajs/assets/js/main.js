@@ -95,7 +95,14 @@ function enhanceForms() {
         event.target.select();
       }
     });
-    // TODO: Limit height for mobile?
+
+    // Limit textarea height for "mobile"
+    // Original code used browser detection; I'll just assume if
+    //   it can't hover we'll limit the height
+    if (matchMedia('(hover: none)').matches) {
+      textarea.style['max-height'] = '10em';
+      textarea.style.overflow = 'auto';
+    }
   });
 }
 
