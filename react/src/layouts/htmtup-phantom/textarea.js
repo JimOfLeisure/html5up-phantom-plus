@@ -1,7 +1,5 @@
 import React from 'react';
 
-const TextArea = () => {
-  //
-};
+const TextArea = () => <></>;
 
 export default TextArea;
