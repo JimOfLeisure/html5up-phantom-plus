@@ -52,8 +52,8 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
     {/* <!-- Lists --> */}
     <section>
       <h2>Lists</h2>
-      <div class="row">
-        <div class="col-6 col-12-medium">
+      <div className="row">
+        <div className="col-6 col-12-medium">
           <h3>Unordered</h3>
           <ul>
             <li>Dolor pulvinar etiam.</li>
@@ -61,13 +61,13 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
             <li>Felis enim feugiat.</li>
           </ul>
           <h3>Alternate</h3>
-          <ul class="alt">
+          <ul className="alt">
             <li>Dolor pulvinar etiam.</li>
             <li>Sagittis adipiscing.</li>
             <li>Felis enim feugiat.</li>
           </ul>
         </div>
-        <div class="col-6 col-12-medium">
+        <div className="col-6 col-12-medium">
           <h3>Ordered</h3>
           <ol>
             <li>Dolor pulvinar etiam.</li>
@@ -78,125 +78,125 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
             <li>Felis enim et feugiat.</li>
           </ol>
           <h3>Icons</h3>
-          <ul class="icons">
+          <ul className="icons">
             <li>
-              <a href="#" class="icon brands style1 fa-twitter">
-                <span class="label">Twitter</span>
+              <a href="#" className="icon brands style1 fa-twitter">
+                <span className="label">Twitter</span>
               </a>
             </li>
             <li>
-              <a href="#" class="icon brands style1 fa-facebook-f">
-                <span class="label">Facebook</span>
+              <a href="#" className="icon brands style1 fa-facebook-f">
+                <span className="label">Facebook</span>
               </a>
             </li>
             <li>
-              <a href="#" class="icon brands style1 fa-instagram">
-                <span class="label">Instagram</span>
+              <a href="#" className="icon brands style1 fa-instagram">
+                <span className="label">Instagram</span>
               </a>
             </li>
             <li>
-              <a href="#" class="icon brands style1 fa-github">
-                <span class="label">Github</span>
+              <a href="#" className="icon brands style1 fa-github">
+                <span className="label">Github</span>
               </a>
             </li>
           </ul>
-          <ul class="icons">
+          <ul className="icons">
             <li>
-              <a href="#" class="icon brands style2 fa-twitter">
-                <span class="label">Twitter</span>
+              <a href="#" className="icon brands style2 fa-twitter">
+                <span className="label">Twitter</span>
               </a>
             </li>
             <li>
-              <a href="#" class="icon brands style2 fa-facebook-f">
-                <span class="label">Facebook</span>
+              <a href="#" className="icon brands style2 fa-facebook-f">
+                <span className="label">Facebook</span>
               </a>
             </li>
             <li>
-              <a href="#" class="icon brands style2 fa-instagram">
-                <span class="label">Instagram</span>
+              <a href="#" className="icon brands style2 fa-instagram">
+                <span className="label">Instagram</span>
               </a>
             </li>
             <li>
-              <a href="#" class="icon brands style2 fa-github">
-                <span class="label">Github</span>
+              <a href="#" className="icon brands style2 fa-github">
+                <span className="label">Github</span>
               </a>
             </li>
           </ul>
         </div>
       </div>
       <h2>Actions</h2>
-      <div class="row">
-        <div class="col-6 col-12-medium">
-          <ul class="actions">
+      <div className="row">
+        <div className="col-6 col-12-medium">
+          <ul className="actions">
             <li>
-              <a href="#" class="button primary">
+              <a href="#" className="button primary">
                 Default
               </a>
             </li>
             <li>
-              <a href="#" class="button">
-                Default
-              </a>
-            </li>
-          </ul>
-          <ul class="actions small">
-            <li>
-              <a href="#" class="button primary small">
-                Small
-              </a>
-            </li>
-            <li>
-              <a href="#" class="button small">
-                Small
-              </a>
-            </li>
-          </ul>
-          <ul class="actions stacked">
-            <li>
-              <a href="#" class="button primary">
-                Default
-              </a>
-            </li>
-            <li>
-              <a href="#" class="button">
+              <a href="#" className="button">
                 Default
               </a>
             </li>
           </ul>
-          <ul class="actions stacked">
+          <ul className="actions small">
             <li>
-              <a href="#" class="button primary small">
+              <a href="#" className="button primary small">
                 Small
               </a>
             </li>
             <li>
-              <a href="#" class="button small">
+              <a href="#" className="button small">
+                Small
+              </a>
+            </li>
+          </ul>
+          <ul className="actions stacked">
+            <li>
+              <a href="#" className="button primary">
+                Default
+              </a>
+            </li>
+            <li>
+              <a href="#" className="button">
+                Default
+              </a>
+            </li>
+          </ul>
+          <ul className="actions stacked">
+            <li>
+              <a href="#" className="button primary small">
+                Small
+              </a>
+            </li>
+            <li>
+              <a href="#" className="button small">
                 Small
               </a>
             </li>
           </ul>
         </div>
-        <div class="col-6 col-12-medium">
-          <ul class="actions stacked">
+        <div className="col-6 col-12-medium">
+          <ul className="actions stacked">
             <li>
-              <a href="#" class="button primary fit">
+              <a href="#" className="button primary fit">
                 Default
               </a>
             </li>
             <li>
-              <a href="#" class="button fit">
+              <a href="#" className="button fit">
                 Default
               </a>
             </li>
           </ul>
-          <ul class="actions stacked">
+          <ul className="actions stacked">
             <li>
-              <a href="#" class="button primary small fit">
+              <a href="#" className="button primary small fit">
                 Small
               </a>
             </li>
             <li>
-              <a href="#" class="button small fit">
+              <a href="#" className="button small fit">
                 Small
               </a>
             </li>
@@ -209,7 +209,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
     <section>
       <h2>Table</h2>
       <h3>Default</h3>
-      <div class="table-wrapper">
+      <div className="table-wrapper">
         <table>
           <thead>
             <tr>
@@ -255,8 +255,8 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
       </div>
 
       <h3>Alternate</h3>
-      <div class="table-wrapper">
-        <table class="alt">
+      <div className="table-wrapper">
+        <table className="alt">
           <thead>
             <tr>
               <th>Name</th>
@@ -304,92 +304,92 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
     {/* <!-- Buttons --> */}
     <section>
       <h3>Buttons</h3>
-      <ul class="actions">
+      <ul className="actions">
         <li>
-          <a href="#" class="button primary">
+          <a href="#" className="button primary">
             Primary
           </a>
         </li>
         <li>
-          <a href="#" class="button">
+          <a href="#" className="button">
             Default
           </a>
         </li>
       </ul>
-      <ul class="actions">
+      <ul className="actions">
         <li>
-          <a href="#" class="button large">
+          <a href="#" className="button large">
             Large
           </a>
         </li>
         <li>
-          <a href="#" class="button">
+          <a href="#" className="button">
             Default
           </a>
         </li>
         <li>
-          <a href="#" class="button small">
+          <a href="#" className="button small">
             Small
           </a>
         </li>
       </ul>
-      <ul class="actions fit">
+      <ul className="actions fit">
         <li>
-          <a href="#" class="button primary fit">
+          <a href="#" className="button primary fit">
             Fit
           </a>
         </li>
         <li>
-          <a href="#" class="button fit">
+          <a href="#" className="button fit">
             Fit
           </a>
         </li>
         <li>
-          <a href="#" class="button fit">
+          <a href="#" className="button fit">
             Fit
           </a>
         </li>
       </ul>
-      <ul class="actions fit small">
+      <ul className="actions fit small">
         <li>
-          <a href="#" class="button primary fit small">
+          <a href="#" className="button primary fit small">
             Fit + Small
           </a>
         </li>
         <li>
-          <a href="#" class="button fit small">
+          <a href="#" className="button fit small">
             Fit + Small
           </a>
         </li>
         <li>
-          <a href="#" class="button fit small">
+          <a href="#" className="button fit small">
             Fit + Small
           </a>
         </li>
       </ul>
-      <ul class="actions">
+      <ul className="actions">
         <li>
-          <a href="#" class="button primary icon solid fa-download">
+          <a href="#" className="button primary icon solid fa-download">
             Icon
           </a>
         </li>
         <li>
-          <a href="#" class="button icon solid fa-upload">
+          <a href="#" className="button icon solid fa-upload">
             Icon
           </a>
         </li>
         <li>
-          <a href="#" class="button icon solid fa-save">
+          <a href="#" className="button icon solid fa-save">
             Icon
           </a>
         </li>
       </ul>
-      <ul class="actions">
+      <ul className="actions">
         <li>
-          <span class="button primary disabled">Disabled</span>
+          <span className="button primary disabled">Disabled</span>
         </li>
         <li>
-          <span class="button disabled">Disabled</span>
+          <span className="button disabled">Disabled</span>
         </li>
       </ul>
     </section>
@@ -398,8 +398,8 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
     <section>
       <h2>Form</h2>
       <form method="post" action="#">
-        <div class="row gtr-uniform">
-          <div class="col-6 col-12-xsmall">
+        <div className="row gtr-uniform">
+          <div className="col-6 col-12-xsmall">
             <input
               type="text"
               name="demo-name"
@@ -408,7 +408,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
               placeholder="Name"
             />
           </div>
-          <div class="col-6 col-12-xsmall">
+          <div className="col-6 col-12-xsmall">
             <input
               type="email"
               name="demo-email"
@@ -417,7 +417,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
               placeholder="Email"
             />
           </div>
-          <div class="col-12">
+          <div className="col-12">
             <select name="demo-category" id="demo-category">
               <option value="">- Category -</option>
               <option value="1">Manufacturing</option>
@@ -426,7 +426,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
               <option value="1">Human Resources</option>
             </select>
           </div>
-          <div class="col-4 col-12-small">
+          <div className="col-4 col-12-small">
             <input
               type="radio"
               id="demo-priority-low"
@@ -435,7 +435,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
             />
             <label for="demo-priority-low">Low</label>
           </div>
-          <div class="col-4 col-12-small">
+          <div className="col-4 col-12-small">
             <input
               type="radio"
               id="demo-priority-normal"
@@ -443,29 +443,29 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
             />
             <label for="demo-priority-normal">Normal</label>
           </div>
-          <div class="col-4 col-12-small">
+          <div className="col-4 col-12-small">
             <input type="radio" id="demo-priority-high" name="demo-priority" />
             <label for="demo-priority-high">High</label>
           </div>
-          <div class="col-6 col-12-small">
+          <div className="col-6 col-12-small">
             <input type="checkbox" id="demo-copy" name="demo-copy" />
             <label for="demo-copy">Email me a copy</label>
           </div>
-          <div class="col-6 col-12-small">
+          <div className="col-6 col-12-small">
             <input type="checkbox" id="demo-human" name="demo-human" checked />
             <label for="demo-human">Not a robot</label>
           </div>
-          <div class="col-12">
+          <div className="col-12">
             <textarea
               name="demo-message"
               id="demo-message"
               placeholder="Enter your message"
               rows="6"></textarea>
           </div>
-          <div class="col-12">
-            <ul class="actions">
+          <div className="col-12">
+            <ul className="actions">
               <li>
-                <input type="submit" value="Send Message" class="primary" />
+                <input type="submit" value="Send Message" className="primary" />
               </li>
               <li>
                 <input type="reset" value="Reset" />
@@ -480,55 +480,55 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
     <section>
       <h2>Image</h2>
       <h3>Fit</h3>
-      <div class="box alt">
-        <div class="row gtr-uniform">
-          <div class="col-12">
-            <span class="image fit">
+      <div className="box alt">
+        <div className="row gtr-uniform">
+          <div className="col-12">
+            <span className="image fit">
               <img src="images/pic13.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic01.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic02.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic03.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic03.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic01.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic02.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic02.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic03.jpg" alt="" />
             </span>
           </div>
-          <div class="col-4">
-            <span class="image fit">
+          <div className="col-4">
+            <span className="image fit">
               <img src="images/pic01.jpg" alt="" />
             </span>
           </div>
@@ -536,7 +536,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
       </div>
       <h3>Left &amp; Right</h3>
       <p>
-        <span class="image left">
+        <span className="image left">
           <img src="images/pic14.jpg" alt="" />
         </span>
         Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
@@ -560,7 +560,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
         praesent.
       </p>
       <p>
-        <span class="image right">
+        <span className="image right">
           <img src="images/pic15.jpg" alt="" />
         </span>
         Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
