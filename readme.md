@@ -1,6 +1,8 @@
+# [HTML5UP's Phantom theme](https://html5up.net/phantom)
+
 The contents of html5up/phantom is [HTML5UP's Phantom theme](https://html5up.net/phantom), unaltered.
 
-# Ports of HTML5UP Phantom
+## Ports of HTML5UP Phantom
 
 The `main` branch of this repo is a modified version of this theme that
 removes jQuery and other libraries and replicates their functionality with
