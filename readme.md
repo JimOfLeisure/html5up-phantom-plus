@@ -1,54 +1,37 @@
-An decently-successful-so-far attempt to eliminate jQuery from
-[HTML5UP's Phantom theme](https://html5up.net/phantom).
+# A VanillaJS-ified version of [HTML5UP's Phantom theme](https://html5up.net/phantom)
 
-## Using
+HTML5UP's Phantom theme was published in 2015 and relies on jQuery, browser sniffing, and includes a breakpoints library. I wanted to see if I could use modern vanilla JavaScript and CSS to eliminate the need for the thrid-party libraries. I believe I have succeeded.
 
-I don't yet have a build function set up yet. For now, just copy the
-html5up folder to where you want it, then copy the vanillajs folder
-over it. They have the same file structure, and the new files will
-overwrite the originals. Then you need to run SASS to rebuild and
-overwrite the CSS files.
+I do not consider myself a designer nor do I declare this a proper modern design. Maybe it is, and maybe it isn't. I just wanted to use a freely-available theme and shed unnecessary code. In most cases the changes I made are attempts to replicate the original code's function, not judge, improve, or modernize it.
 
-It may also work to (**untested**) take my main.js and \_tiles.scss and replace the originals in an existing Phantom-themed site, but be sure everything is backed up, and do it on a test site first and verify all functionality. You may need to compile all the SASS again after updating with my modified \_tile.scss. And if you wanted you should then be able to remove references to jquery, browser, and breakpoints in the html file script src tags.
+## Changes from the original
 
-## Status
+- jQuery code has been replaced with plain "vanilla" JavaScript code
+- The theme author's breakpoints library has been removed. I don't believe it was actually doing anything in this theme and suspect it was included as author's boilerplate starter.
+- The theme author's browser library was removed, and instead I used `@media(hover: none)` and `@media(hover: hover)` CSS media queries to replace "mobile" / "touch" brower sniffing functions. This is not a perfect function replacement, but for this purpose I think it matches the theme author's intent.
+- A util.js collection of jQuery functions was removed, and I can't tell where it's from or that it was doing anything in the first place.
+- The original code prevents default handling of anchor links on `#menu` and
+  instead waits 350ms and then changes the location. I did not replicate that
+  behavior; I'm letting anchor clicks do their default behavior.
+- No attempt has been made to support legacy browsers in the updated code.
 
-- Most of the behavior of the original code is now replicated in 100ish lines of actual code without using jQuery or other third-party libraries. (No shade at the original creator; JavaScript and CSS have changed a lot in the 7 years since theme publication.)
-- The script _does_ alter the DOM on document ready when run, so if you use a DOM-altering library, either replace that functionality or ensure your library waits to allow this script to alter the DOM before it goes to work. It moves `#menu` to the bottom of the body. (Why though? Seems to be needed for styling, but why is it not there in the first place?) It also adds inner wrapper `div`s to the menu and textareas, presumably for styling/animating.
-- I am using the `(hover: hover)` and `(hover: none)` media queries instead
-  of browser sniffing to choose "mobile" or "touch" devices.
+## Not changed
+
+- Although jQuery is remvoved, the new code still alters the DOM by adding div wrappers to various elements for menu sliding and textarea resizing features. It's possible to replicate this functionality with manually placing the wrappers, but I decided not to try to do that in case anyone wants to try dropping this updated js and css into an existing Phantom site.
 - The original code tries to select the textarea contents when tabbing out,
   but it doesn't work. I replicated the attempt, and it doesn't work in the
   same way that the original doesn't.
-- The original code prevents default handling of anchor links on `#menu` and
-  instead waits 350ms and then changes the location. I did not replicate that
-  behavior; I'm letting anchor clicks do their normal thing.
 
-### Things I haven't gotten to yet
+## To Do
 
-- I have not yet tried to
-  add a build script for a usable theme package
+- Fix the `is-touch` replacement styling for \_tiles.scss . It was working before I refactored this repo, and now it's not. I think it broke when I removed the SASS deprecation warnings and rebuilt the css, and I think it's a cascade ordering issue, but I'm not sure.
+- See if the \_breakpoints.scss file has anything to do with the breakpoints library I removed. I don't believe there is any cross-js-css activity going on, but I want to be sure I didn't break something.
 
-### Things I don't currently intend to do
+# Other ports of HTML5UP Phantom
 
-If you find that these exclusions create new problems the original code doesn't have, please submit an issue.
+I intend to port this to React and have branches of this repo for new Create React App, Gatsby, and Next.js new project skeletons with the HTML5UP Phantom theme installed.
 
-- "Improve" the theme. I'm not sure why JavaScript needs to manipulate the DOM here. It moves the `#menu` to the bottom of the body and adds wrapper divs to certain elements. Part of me wants to purify/simplify that, but I'm not a theme designer, and I intend for this theme to be sharable, and I guess I want it backward-compatible with the original, too, so you could drop my main.js and \_tiles.scss in place of an existing Phantom-themed site and have it work the same. So It will behave the same way, at least for the vanillajs version.
-- Support legacy browsers: IE is toast. Also the [CSS hover media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) is a fairly recent addition and may leave modern-but-not-up-to-date browsers not detecting touch/mobile for restyling.
-- Alter link-in-menu behavior: The original code prevents links from being clicked, waits 350ms and then changes the location with jQuery.
-- Port util.js: The original code includes util.js, a jQuery function collection which as far as I can tell is not ever used in this theme.
-- Use breakpoints: A call is made to theme creator [@ajlkn's responsive-tools](https://github.com/ajlkn/responsive-tools) to define breakpoints, but no actions or queries are being called on it, so it does nothing in this theme.
+Here are the currently available completed branches:
 
-## Folder structure
-
-- html5up-phantom - The verbatim theme files from [HTML5UP's Phantom
-  theme](https://html5up.net/phantom)
-- vanillajs - Same folder
-  structure as html5up-phantom, but only includes files changed from
-  the original distribution
-- dist (untracked by git) - Eventually a
-  build script will take the needed files from the original theme and
-  the updated files from vanillajs to be a deployable theme, but for
-  now I'm just manually copying and/or linking files in there during
-  development.
-- react ... coming soon?
+- `main` - This branch - The vanilla JS update of the original
+- `original` - For conveniends, the original theme is in the `original` branch.
