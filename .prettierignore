@@ -1,7 +1,5 @@
-# Avoid reformatting original theme files
-html5up-phantom/
-
-# May avoid reformatting html and css files, too, as I don't expect to alter them much
+# Preventing Prettier from modifying these extensions as I'm only making
+#   minor tweaks to these files from the original theme
 *.html
 *.css
 *.scss
