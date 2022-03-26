@@ -26,5 +26,5 @@ Credits:
 		Font Awesome (fontawesome.io)
 
 	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+		Jim "JimOfLeisure" Nelson - main.js vanilla JS port of original jQuery
+		and library code (https://github.com/JimOfLeisure/html5up-phantom-plus)
