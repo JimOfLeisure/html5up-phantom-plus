@@ -34,4 +34,4 @@ I intend to port this to React and have branches of this repo for new Create Rea
 Here are the currently available completed branches:
 
 - `main` - This branch - The vanilla JS update of the original
-- `original` - For conveniends, the original theme is in the `original` branch.
+- `original` - For convenience, the original theme is in the `original` branch.
