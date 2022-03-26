@@ -4,7 +4,7 @@
   "description": "An attempt to eliminate jQuery from [HTML5UP's Phantom theme](https://html5up.net/phantom).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "cd html5up-phantom-vanillajs/assets && sass sass/main.scss css/main.css && sass sass/noscript.scss css/noscript.scss"
   },
   "author": "",
   "license": "CC-BY-3.0",
