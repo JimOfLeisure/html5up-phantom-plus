@@ -9,6 +9,6 @@
   "author": "",
   "license": "CC-BY-3.0",
   "devDependencies": {
-    "vite": "^2.8.6"
+    "sass": "^1.49.9"
   }
 }
