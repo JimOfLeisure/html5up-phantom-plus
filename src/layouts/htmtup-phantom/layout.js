@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet';
 import { useState, useEffect } from 'react';
 
 const Layout = ({ children, menuList }) => {
-  const [menuVisible, setMenuVisible] = useState(false);
-  const [preload, setPreload] = useState(false);
+  const [menuVisible, setMenuVisible] = useState('');
+  const [preload, setPreload] = useState('is-preload');
 
   let menuIsDebouncing = false;
   const menuDebounced = () => {
@@ -15,24 +15,23 @@ const Layout = ({ children, menuList }) => {
     }
     return false;
   };
-  const hideMenu = () => menuDebounced() && setMenuVisible(false);
-  const showMenu = () => menuDebounced() && setMenuVisible(true);
-  const toggleMenu = () => menuDebounced() && setMenuVisible(!menuVisible);
+  const hideMenu = () => menuDebounced() && setMenuVisible('');
+  const showMenu = () => menuDebounced() && setMenuVisible('is-menu-visible');
+  const toggleMenu = () =>
+    menuDebounced() &&
+    setMenuVisible(menuVisible === '' ? 'is-menu-visible' : '');
   useEffect(() =>
     setTimeout(() => {
-      // console.log('hi');
-      // setPreload(false);
-    }, 100)
+      console.log('hi');
+      setPreload('');
+    }, 1000)
   );
 
   return (
     <>
       <Helmet
         bodyAttributes={{
-          class:
-            (menuVisible ? 'is-menu-visible' : '') + ' ' + preload
-              ? 'is-preload'
-              : '',
+          class: `${preload} ${menuVisible}`,
         }}>
         <link rel="stylesheet" href="assets/css/main.css" />
         {/* this doesn't work: */}
@@ -49,7 +48,7 @@ const Layout = ({ children, menuList }) => {
               <span className="symbol">
                 <img src="images/logo.svg" alt="" />
               </span>
-              <span className="title">Phantom {preload}</span>
+              <span className="title">Phantom</span>
             </a>
 
             {/* <!-- Nav --> */}
