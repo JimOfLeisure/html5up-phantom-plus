@@ -11,13 +11,9 @@ In-progress; had a partial React conversion, decide to develop in and eventually
 - What to do with noscript.scss ?
 - Menu
   - Possibly second copy of menu in footer (otherwise nav is lost if no script)
-  - Hide menu on esc key
-  - Prevent unhandled #menu clicks from hiding menu
-  - Close menu on body click
   - Debounce code isn't working
 - TextArea code
 - Finish stuff
-- Tiles aren't getting their "touch" styling
 
 <hr>
 

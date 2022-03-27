@@ -23,14 +23,32 @@ const Layout = ({ children, menuList }) => {
     menuDebounced() &&
     setMenuVisible(menuVisible === '' ? 'is-menu-visible' : '');
 
+  // Close menu on ESC key pressed
+  document.addEventListener('keydown', event => {
+    if (event.code === 'Escape') {
+      hideMenu();
+      console.log('Escape!');
+    }
+  });
+
   setTimeout(() => {
-    console.log('hi');
+    // Play initial animations on page load.
+    //   Wait 100ms to remove is-preload to ensure DOM has had time to update
     setPreload('');
+    console.log('Preload class removed');
   }, 100);
+
+  const clickBody = () => {
+    console.log('clickbody');
+    hideMenu();
+  };
 
   return (
     <>
-      <div id="wrapper" className={menuVisible + ' ' + preload}>
+      <div
+        id="wrapper"
+        className={menuVisible + ' ' + preload}
+        onClick={clickBody}>
         {/* <!-- Header --> */}
         <header id="header">
           <div className="inner">

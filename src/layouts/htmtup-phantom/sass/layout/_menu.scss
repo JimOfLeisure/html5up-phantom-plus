@@ -151,9 +151,11 @@
 }
 
 #wrapper.is-menu-visible {
-  @include vendor('pointer-events', 'none');
   cursor: default;
   opacity: 0.25;
+  * {
+    @include vendor('pointer-events', 'none');
+  }
 }
 
 #menu.is-menu-visible {
