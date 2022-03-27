@@ -1,6 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { menuData } from './demo-data';
+import TextArea from './textarea';
 import './sass/main.scss';
 
 const Layout = ({ children, menuList }) => {
@@ -99,10 +100,10 @@ const Layout = ({ children, menuList }) => {
                     />
                   </div>
                   <div className="field">
-                    <textarea
+                    <TextArea
                       name="message"
                       id="message"
-                      placeholder="Message"></textarea>
+                      placeholder="Message"></TextArea>
                   </div>
                 </div>
                 <ul className="actions">
