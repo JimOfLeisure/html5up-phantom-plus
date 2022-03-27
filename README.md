@@ -8,17 +8,16 @@ In-progress; had a partial React conversion, decide to develop in and eventually
 
 ## To do
 
-- What to do with noscript.css ?
-- Figure out if/how I want to provide for SASS changes
+- What to do with noscript.scss ?
 - Menu
-  - populate menu with GraphQL
-  - Figure out why body isn't whiting out when menu opens
   - Possibly second copy of menu in footer (otherwise nav is lost if no script)
   - Hide menu on esc key
   - Prevent unhandled #menu clicks from hiding menu
   - Close menu on body click
+  - Debounce code isn't working
 - TextArea code
 - Finish stuff
+- Tiles aren't getting their "touch" styling
 
 <hr>
 

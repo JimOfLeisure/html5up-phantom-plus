@@ -10,6 +10,7 @@ const Layout = ({ children, menuList }) => {
   let menuIsDebouncing = false;
   const menuDebounced = () => {
     if (!menuIsDebouncing) {
+      console.log('debounce', menuVisible);
       setTimeout(() => (menuIsDebouncing = false), 350);
       menuIsDebouncing = true;
       return true;
@@ -21,16 +22,15 @@ const Layout = ({ children, menuList }) => {
   const toggleMenu = () =>
     menuDebounced() &&
     setMenuVisible(menuVisible === '' ? 'is-menu-visible' : '');
-  useEffect(() =>
-    setTimeout(() => {
-      console.log('hi');
-      setPreload('');
-    }, 100)
-  );
+
+  setTimeout(() => {
+    console.log('hi');
+    setPreload('');
+  }, 100);
 
   return (
     <>
-      <div className={`wrapper ${preload}`}>
+      <div id="wrapper" className={menuVisible + ' ' + preload}>
         {/* <!-- Header --> */}
         <header id="header">
           <div className="inner">
@@ -149,7 +149,7 @@ const Layout = ({ children, menuList }) => {
         </footer>
       </div>
       {/* Menu MUST be outside the wrapper div */}
-      <nav id="menu" className={preload}>
+      <nav id="menu" className={menuVisible + ' ' + preload}>
         <div className="inner">
           <h2>Menu</h2>
           <ul>
