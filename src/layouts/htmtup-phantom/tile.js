@@ -3,6 +3,7 @@ import React from 'react';
 /*
   Props
 
+  className - article class attribute, usually "style1", "style2", etc.
   src - tile image link
   alt - tile image alt text
   href - tile link destination
@@ -12,7 +13,7 @@ import React from 'react';
   NOTE: The Tile needs to be inside a TileList
 */
 
-const Tile = ({ src, alt, href, title, children }) => (
+const Tile = ({ className, src, alt, href, title, children }) => (
   <article className="style1">
     <span className="image">
       <img src={src} alt={alt} />
