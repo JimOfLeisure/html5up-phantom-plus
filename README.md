@@ -27,6 +27,16 @@ Mostly working well, just minor fixes needed.
 - Figure out how to make TextArea shrink if text height shrinks
 - Abolish all the `console.log`s (I'm still using them to figure out debouncing)
 
+# Other ports of HTML5UP Phantom
+
+I intend to port this to React and have branches of this repo for new Create React App, Gatsby, and Next.js new project skeletons with the HTML5UP Phantom theme installed.
+
+Here are the currently available completed branches:
+
+- `main` The vanilla JS update of the original
+- `gatsby` - This branch - A new Gatsby site repo with a Phantom-derived theme
+- `original` - For convenience, the original theme is in the `original` branch.
+
 <hr>
 
 <p align="center">
