@@ -15,4 +15,5 @@ theme installed.
 Here are the currently available completed branches:
 
 - `main` - The vanilla JS update of the original
+- `gatsby` - A new Gatsby site repo with a Phantom-derived theme
 - `original` - This branch - For convenience, the original theme is in the `original` branch.
