@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useState, useEffect } from 'react';
 import { menuData } from './demo-data';
+import './sass/main.scss';
 
 const Layout = ({ children, menuList }) => {
   const [menuVisible, setMenuVisible] = useState('');
@@ -34,7 +35,7 @@ const Layout = ({ children, menuList }) => {
         bodyAttributes={{
           class: `${preload} ${menuVisible}`,
         }}>
-        <link rel="stylesheet" href="assets/css/main.css" />
+        {/* <link rel="stylesheet" href="assets/css/main.css" /> */}
         {/* this doesn't work: */}
         {/* <noscript>
           <link rel="stylesheet" href="noscript.css" />
