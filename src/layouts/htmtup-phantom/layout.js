@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { useState, useEffect } from 'react';
 import { menuData } from './demo-data';
 import './sass/main.scss';
@@ -26,22 +25,12 @@ const Layout = ({ children, menuList }) => {
     setTimeout(() => {
       console.log('hi');
       setPreload('');
-    }, 1000)
+    }, 100)
   );
 
   return (
     <>
-      <Helmet
-        bodyAttributes={{
-          class: `${preload} ${menuVisible}`,
-        }}>
-        {/* <link rel="stylesheet" href="assets/css/main.css" /> */}
-        {/* this doesn't work: */}
-        {/* <noscript>
-          <link rel="stylesheet" href="noscript.css" />
-        </noscript> */}
-      </Helmet>
-      <div className="wrapper">
+      <div className={`wrapper ${preload}`}>
         {/* <!-- Header --> */}
         <header id="header">
           <div className="inner">
@@ -160,7 +149,7 @@ const Layout = ({ children, menuList }) => {
         </footer>
       </div>
       {/* Menu MUST be outside the wrapper div */}
-      <nav id="menu">
+      <nav id="menu" className={preload}>
         <div className="inner">
           <h2>Menu</h2>
           <ul>
