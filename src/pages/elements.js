@@ -405,7 +405,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
               type="text"
               name="demo-name"
               id="demo-name"
-              value=""
+              defaultValue=""
               placeholder="Name"
             />
           </div>
@@ -414,17 +414,17 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
               type="email"
               name="demo-email"
               id="demo-email"
-              value=""
+              defaultValue=""
               placeholder="Email"
             />
           </div>
           <div className="col-12">
             <select name="demo-category" id="demo-category">
-              <option value="">- Category -</option>
-              <option value="1">Manufacturing</option>
-              <option value="1">Shipping</option>
-              <option value="1">Administration</option>
-              <option value="1">Human Resources</option>
+              <option defaultValue="">- Category -</option>
+              <option defaultValue="1">Manufacturing</option>
+              <option defaultValue="1">Shipping</option>
+              <option defaultValue="1">Administration</option>
+              <option defaultValue="1">Human Resources</option>
             </select>
           </div>
           <div className="col-4 col-12-small">
@@ -432,7 +432,7 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
               type="radio"
               id="demo-priority-low"
               name="demo-priority"
-              checked
+              defaultChecked
             />
             <label htmlFor="demo-priority-low">Low</label>
           </div>
@@ -453,7 +453,12 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
             <label htmlFor="demo-copy">Email me a copy</label>
           </div>
           <div className="col-6 col-12-small">
-            <input type="checkbox" id="demo-human" name="demo-human" checked />
+            <input
+              type="checkbox"
+              id="demo-human"
+              name="demo-human"
+              defaultChecked
+            />
             <label htmlFor="demo-human">Not a robot</label>
           </div>
           <div className="col-12">
@@ -465,10 +470,14 @@ print 'It took ' + i + ' iterations to sort the deck.';`}</code>
           <div className="col-12">
             <ul className="actions">
               <li>
-                <input type="submit" value="Send Message" className="primary" />
+                <input
+                  type="submit"
+                  defaultValue="Send Message"
+                  className="primary"
+                />
               </li>
               <li>
-                <input type="reset" value="Reset" />
+                <input type="reset" defaultValue="Reset" />
               </li>
             </ul>
           </div>
