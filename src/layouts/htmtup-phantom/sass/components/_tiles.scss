@@ -207,7 +207,7 @@
 
   // Touch, or more specifically primary pointing device can't conveniently hover
   @media (hover: none) {
-    article {
+    article > a {
       .content {
         max-height: 15em;
         opacity: 1;
