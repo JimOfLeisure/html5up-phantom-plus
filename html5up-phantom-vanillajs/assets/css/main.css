@@ -2244,7 +2244,7 @@ body.is-preload .tiles article {
   opacity: 0;
 }
 @media (hover: none) {
-  .tiles article .content {
+  .tiles article > a .content {
     max-height: 15em;
     opacity: 1;
   }

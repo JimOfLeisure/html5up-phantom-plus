@@ -24,7 +24,6 @@ I do not consider myself a designer nor do I declare this a proper modern design
 
 ## To Do
 
-- Fix the `is-touch` replacement styling for \_tiles.scss . It was working before I refactored this repo, and now it's not. I think it broke when I removed the SASS deprecation warnings and rebuilt the css, and I think it's a cascade ordering issue, but I'm not sure.
 - See if the \_breakpoints.scss file has anything to do with the breakpoints library I removed. I don't believe there is any cross-js-css activity going on, but I want to be sure I didn't break something.
 
 # Other ports of HTML5UP Phantom
