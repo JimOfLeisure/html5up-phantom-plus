@@ -9,6 +9,15 @@ const TextArea = ({ name, id, cols, placeholder, children }) => {
     height: height,
   };
 
+  // Trim leading and trailing whitespace in textarea on focus change and ctrl-enter
+  const trimElement = element => (element.value = element.value.trim());
+  const trimOnCtrlEnter = event => {
+    if (event.code === 'Enter' && event.ctrlKey) {
+      event.preventDefault();
+      event.stopPropagation();
+      trimElement(event.target);
+    }
+  };
   return (
     <div className="textarea-wrapper">
       <textarea
@@ -17,7 +26,10 @@ const TextArea = ({ name, id, cols, placeholder, children }) => {
         cols={cols}
         rows="1"
         placeholder={placeholder}
-        style={textAreaStyle}>
+        style={textAreaStyle}
+        onKeyDown={trimOnCtrlEnter}
+        onBlur={trimElement}
+        onFocus={trimElement}>
         {children}
       </textarea>
     </div>
