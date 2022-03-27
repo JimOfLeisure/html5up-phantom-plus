@@ -1,65 +1,54 @@
-An decently-successful-so-far attempt to eliminate jQuery from
-[HTML5UP's Phantom theme](https://html5up.net/phantom).
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby minimal starter
+</h1>
 
-## Using
+## 🚀 Quick start
 
-I don't yet have a build function set up yet. For now, just copy the
-html5up folder to where you want it, then copy the vanillajs folder
-over it. They have the same file structure, and the new files will
-overwrite the originals. Then you need to run SASS to rebuild and
-overwrite the CSS files.
+1.  **Create a Gatsby site.**
 
-It may also work to (**untested**) take my main.js and \_tiles.scss and replace the originals in an existing Phantom-themed site, but be sure everything is backed up, and do it on a test site first and verify all functionality. You may need to compile all the SASS again after updating with my modified \_tile.scss. And if you wanted you should then be able to remove references to jquery, browser, and breakpoints in the html file script src tags.
+    Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
-## Status
+    ```shell
+    # create a new Gatsby site using the minimal starter
+    npm init gatsby
+    ```
 
-### react
+2.  **Start developing.**
 
-- A lot of rough stuff is in place
-- TileList is just a copy/paste and needs to be componetized
-- Unsure of best way to handle menu, currently passing it through props into page, layout, then menu
-- TextArea needs auto-sizing code and a way to detect (hover: none)
-- menu needs code
-- Haven't even tried integrating style yet; just shoveling html to jsx and componentizing based on my knowledge of the vanillajs port
+    Navigate into your new site’s directory and start it up.
 
-### vanillajs
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
+    ```
 
-- Most of the behavior of the original code is now replicated in 100ish lines of actual code without using jQuery or other third-party libraries. (No shade at the original creator; JavaScript and CSS have changed a lot in the 7 years since theme publication.)
-- The script _does_ alter the DOM on document ready when run, so if you use a DOM-altering library, either replace that functionality or ensure your library waits to allow this script to alter the DOM before it goes to work. It moves `#menu` to the bottom of the body. (Why though? Seems to be needed for styling, but why is it not there in the first place?) It also adds inner wrapper `div`s to the menu and textareas, presumably for styling/animating.
-- I am using the `(hover: hover)` and `(hover: none)` media queries instead
-  of browser sniffing to choose "mobile" or "touch" devices.
-- The original code tries to select the textarea contents when tabbing out,
-  but it doesn't work. I replicated the attempt, and it doesn't work in the
-  same way that the original doesn't.
-- The original code prevents default handling of anchor links on `#menu` and
-  instead waits 350ms and then changes the location. I did not replicate that
-  behavior; I'm letting anchor clicks do their normal thing.
+3.  **Open the code and start customizing!**
 
-### Things I haven't gotten to yet
+    Your site is now running at http://localhost:8000!
 
-- I have not yet tried to
-  add a build script for a usable theme package
+    Edit `src/pages/index.js` to see your site update in real-time!
 
-### Things I don't currently intend to do
+4.  **Learn more**
 
-If you find that these exclusions create new problems the original code doesn't have, please submit an issue.
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-- "Improve" the theme. I'm not sure why JavaScript needs to manipulate the DOM here. It moves the `#menu` to the bottom of the body and adds wrapper divs to certain elements. Part of me wants to purify/simplify that, but I'm not a theme designer, and I intend for this theme to be sharable, and I guess I want it backward-compatible with the original, too, so you could drop my main.js and \_tiles.scss in place of an existing Phantom-themed site and have it work the same. So It will behave the same way, at least for the vanillajs version.
-- Support legacy browsers: IE is toast. Also the [CSS hover media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) is a fairly recent addition and may leave modern-but-not-up-to-date browsers not detecting touch/mobile for restyling.
-- Alter link-in-menu behavior: The original code prevents links from being clicked, waits 350ms and then changes the location with jQuery.
-- Port util.js: The original code includes util.js, a jQuery function collection which as far as I can tell is not ever used in this theme.
-- Use breakpoints: A call is made to theme creator [@ajlkn's responsive-tools](https://github.com/ajlkn/responsive-tools) to define breakpoints, but no actions or queries are being called on it, so it does nothing in this theme.
+    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-## Folder structure
+    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-- html5up-phantom - The verbatim theme files from [HTML5UP's Phantom
-  theme](https://html5up.net/phantom)
-- vanillajs - Same folder
-  structure as html5up-phantom, but only includes files changed from
-  the original distribution
-- dist (untracked by git) - Eventually a
-  build script will take the needed files from the original theme and
-  the updated files from vanillajs to be a deployable theme, but for
-  now I'm just manually copying and/or linking files in there during
-  development.
-- react ... coming soon?
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+## 🚀 Quick start (Gatsby Cloud)
+
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
