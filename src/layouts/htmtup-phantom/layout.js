@@ -1,5 +1,4 @@
 import React from 'react';
-import Menu from './menu';
 import { Helmet } from 'react-helmet';
 
 const Layout = ({ children, menuList }) => (
@@ -119,7 +118,31 @@ const Layout = ({ children, menuList }) => (
       </footer>
     </div>
     {/* Menu MUST be outside the wrapper div */}
-    <Menu>{menuList}</Menu>
+    <nav id="menu">
+      <div className="inner">
+        <nav id="menu">
+          <h2>Menu</h2>
+          <ul>
+            <li>
+              <a href="#">menu</a>
+            </li>
+            <li>
+              <a href="#">menu</a>
+            </li>
+            <li>
+              <a href="#">menu</a>
+            </li>
+            <li>
+              <a href="#">menu</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      {/* This is the animated X icon and must be oustisde the div.inner */}
+      <a href="#menu" className="close">
+        Close
+      </a>
+    </nav>
   </>
 );
 
