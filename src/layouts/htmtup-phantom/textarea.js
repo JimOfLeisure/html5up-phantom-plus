@@ -28,8 +28,10 @@ const TextArea = ({ name, id, cols, placeholder, children }) => {
         placeholder={placeholder}
         style={textAreaStyle}
         onKeyDown={trimOnCtrlEnter}
-        onBlur={trimElement}
-        onFocus={trimElement}>
+        // These are throwing error
+        // onBlur={trimElement}
+        // onFocus={trimElement}
+      >
         {children}
       </textarea>
     </div>
