@@ -1,8 +1,12 @@
 import React from 'react';
 import Menu from './menu';
+import { Helmet } from 'react-helmet';
 
 const Layout = ({ children, menuList }) => (
   <>
+    <Helmet>
+      <link rel="stylesheet" href="assets/css/main.css" />
+    </Helmet>
     <div className="wrapper">
       {/* <!-- Header --> */}
       <header id="header">
