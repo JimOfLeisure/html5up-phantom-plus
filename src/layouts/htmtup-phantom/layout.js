@@ -16,7 +16,7 @@ const Layout = ({ children, menuList }) => {
     return false;
   };
   const hideMenu = () => menuDebounced() && setMenuVisible('');
-  const showMenu = () => menuDebounced() && setMenuVisible('is-menu-visible');
+  // const showMenu = () => menuDebounced() && setMenuVisible('is-menu-visible');
   const toggleMenu = () =>
     menuDebounced() &&
     setMenuVisible(menuVisible === '' ? 'is-menu-visible' : '');

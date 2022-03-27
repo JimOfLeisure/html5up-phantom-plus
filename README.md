@@ -18,7 +18,6 @@ In-progress; had a partial React conversion, decide to develop in and eventually
   - Prevent unhandled #menu clicks from hiding menu
   - Close menu on body click
 - TextArea code
-- Preload animation hold release
 - Finish stuff
 
 <hr>
