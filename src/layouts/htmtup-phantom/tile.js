@@ -1,0 +1,29 @@
+import React from 'react';
+
+/*
+  Props
+
+  src - tile image link
+  alt - tile image alt text
+  href - tile link destination
+  title - the title on the tile
+  children - the except on the tile, generally <p>A short description</p>
+
+  NOTE: The Tile needs to be inside a TileList
+*/
+
+const Tile = ({ src, alt, href, title, children }) => (
+  <>
+    <article className="style1">
+      <span className="image">
+        <img src={src} alt={alt} />
+      </span>
+      <a href="generic.html">
+        <h2>{title}</h2>
+        <div className="content">{children}</div>
+      </a>
+    </article>
+  </>
+);
+
+export default Tile;
