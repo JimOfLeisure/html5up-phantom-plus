@@ -2,9 +2,7 @@
 
 ## Status
 
-In-progress; had a partial React conversion, decide to develop in and eventually publish a Gatsby starter repo.
-
-- Menu opens/closes
+Mostly working well, just small addtions needed.
 
 ## To do
 
