@@ -1,112 +1,164 @@
+import React from 'react';
+
 // Tile props for the Phantom theme demo index page
 
-export default TileDemoData = [
+const tileDemoData = [
   {
     className: 'style1',
-    src: 'http://localhost:8000/images/pic01.jpg',
+    src: 'images/pic01.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Magna',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style2',
-    src: 'http://localhost:8000/images/pic02.jpg',
+    src: 'images/pic02.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Lorem',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style3',
-    src: 'http://localhost:8000/images/pic03.jpg',
+    src: 'images/pic03.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Feugiat',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style4',
-    src: 'http://localhost:8000/images/pic04.jpg',
+    src: 'images/pic04.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Tempus',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style5',
-    src: 'http://localhost:8000/images/pic05.jpg',
+    src: 'images/pic05.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Aliquam',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style6',
-    src: 'http://localhost:8000/images/pic06.jpg',
+    src: 'images/pic06.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Veroeros',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style2',
-    src: 'http://localhost:8000/images/pic07.jpg',
+    src: 'images/pic07.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Ipsum',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style3',
-    src: 'http://localhost:8000/images/pic08.jpg',
+    src: 'images/pic08.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Dolor',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style1',
-    src: 'http://localhost:8000/images/pic09.jpg',
+    src: 'images/pic09.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Nullam',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style5',
-    src: 'http://localhost:8000/images/pic10.jpg',
+    src: 'images/pic10.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Ultricies',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style6',
-    src: 'http://localhost:8000/images/pic11.jpg',
+    src: 'images/pic11.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Dictum',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
   {
     className: 'style4',
-    src: 'http://localhost:8000/images/pic12.jpg',
+    src: 'images/pic12.jpg',
     alt: '',
-    href: 'http://localhost:8000/generic.html',
+    href: 'generic',
     title: 'Pretium',
-    children:
-      '<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>',
+    children: (
+      <p>
+        Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et
+        feugiat.
+      </p>
+    ),
   },
 ];
+
+export default tileDemoData;

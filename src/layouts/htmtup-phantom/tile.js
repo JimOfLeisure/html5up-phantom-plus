@@ -14,11 +14,11 @@ import React from 'react';
 */
 
 const Tile = ({ className, src, alt, href, title, children }) => (
-  <article className="style1">
+  <article className={className}>
     <span className="image">
       <img src={src} alt={alt} />
     </span>
-    <a href="generic.html">
+    <a href={href}>
       <h2>{title}</h2>
       <div className="content">{children}</div>
     </a>

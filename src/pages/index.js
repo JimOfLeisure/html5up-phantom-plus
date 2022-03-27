@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from '../layouts/htmtup-phantom/layout';
 import TileList from '../layouts/htmtup-phantom/tile-list';
+import Tile from '../layouts/htmtup-phantom/tile';
+import tileData from '../layouts/htmtup-phantom/tile-demo-data';
 
 const IndexPage = ({ menuList }) => (
   <Layout menuList={menuList}>
@@ -17,7 +19,18 @@ const IndexPage = ({ menuList }) => (
         ipsum dolor sit amet nullam dolore.
       </p>
     </header>
-    <TileList></TileList>
+    <TileList>
+      {tileData.map(e => (
+        <Tile
+          className={e.className}
+          src={e.src}
+          alt={e.alt}
+          href={e.href}
+          title={e.title}>
+          {e.children}
+        </Tile>
+      ))}
+    </TileList>
   </Layout>
 );
 
