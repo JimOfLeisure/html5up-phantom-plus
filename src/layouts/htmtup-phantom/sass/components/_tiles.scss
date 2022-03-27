@@ -22,7 +22,7 @@
       ('transform #{$duration} #{$ease}', 'opacity #{$duration} #{$ease}')
     );
     position: relative;
-    width: calc(#{(100% / 3)} - #{$gutter * 1});
+    width: calc(#{calc(100% / 3)} - #{$gutter * 1});
     margin: $gutter 0 0 $gutter;
 
     > .image {
@@ -170,7 +170,8 @@
       }
     }
 
-    body:not(.is-touch) & {
+    // Not touch device, or more speficially able to conveniently hover
+    @media (hover: hover) {
       &:hover {
         > .image {
           @include vendor('transform', 'scale(1.1)');
@@ -197,14 +198,15 @@
     margin-top: _size(element-margin);
   }
 
-  .is-preload & {
+  body.is-preload & {
     article {
       @include vendor('transform', 'scale(0.9)');
       opacity: 0;
     }
   }
 
-  body.is-touch & {
+  // Touch, or more specifically primary pointing device can't conveniently hover
+  @media (hover: none) {
     article {
       .content {
         max-height: 15em;
@@ -219,7 +221,7 @@
     margin: ($gutter * -1) 0 0 ($gutter * -1);
 
     article {
-      width: calc(#{(100% / 3)} - #{$gutter * 1});
+      width: calc(#{calc(100% / 3)} - #{$gutter * 1});
       margin: $gutter 0 0 $gutter;
     }
   }
@@ -230,7 +232,7 @@
     margin: ($gutter * -1) 0 0 ($gutter * -1);
 
     article {
-      width: calc(#{(100% / 2)} - #{$gutter * 1});
+      width: calc(#{calc(100% / 2)} - #{$gutter * 1});
       margin: $gutter 0 0 $gutter;
     }
   }
@@ -241,7 +243,7 @@
     margin: ($gutter * -1) 0 0 ($gutter * -1);
 
     article {
-      width: calc(#{(100% / 2)} - #{$gutter * 1});
+      width: calc(#{calc(100% / 2)} - #{$gutter * 1});
       margin: $gutter 0 0 $gutter;
 
       &:hover {
