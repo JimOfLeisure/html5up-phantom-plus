@@ -161,16 +161,14 @@ const Layout = ({ children, menuList }) => {
       {/* Menu MUST be outside the wrapper div */}
       <nav id="menu">
         <div className="inner">
-          <nav id="menu">
-            <h2>Menu</h2>
-            <ul>
-              {menuData.map((e, i) => (
-                <li key={i}>
-                  <a href={e.href}>{e.content}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <h2>Menu</h2>
+          <ul>
+            {menuData.map((e, i) => (
+              <li key={i}>
+                <a href={e.href}>{e.content}</a>
+              </li>
+            ))}
+          </ul>
         </div>
         {/* This is the animated X icon and must be oustisde the div.inner */}
         <a href="#menu" className="close" onClick={hideMenu}>
