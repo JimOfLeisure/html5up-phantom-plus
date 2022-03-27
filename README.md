@@ -1,3 +1,28 @@
+# HTML5UP's Phantom theme converting to React/Gatsby
+
+## Status
+
+In-progress; had a partial React conversion, decide to develop in and eventually publish a Gatsby starter repo.
+
+- Menu opens/closes
+
+## To do
+
+- What to do with noscript.css ?
+- Figure out if/how I want to provide for SASS changes
+- Menu
+  - populate menu with GraphQL
+  - Figure out why body isn't whiting out when menu opens
+  - Possibly second copy of menu in footer (otherwise nav is lost if no script)
+  - Hide menu on esc key
+  - Prevent unhandled #menu clicks from hiding menu
+  - Close menu on body click
+- TextArea code
+- Preload animation hold release
+- Finish stuff
+
+<hr>
+
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />

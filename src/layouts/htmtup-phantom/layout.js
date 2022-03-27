@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Layout = ({ children, menuList }) => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [preload, setPreload] = useState(false);
 
   let menuIsDebouncing = false;
   const menuDebounced = () => {
@@ -17,14 +18,27 @@ const Layout = ({ children, menuList }) => {
   const hideMenu = () => menuDebounced() && setMenuVisible(false);
   const showMenu = () => menuDebounced() && setMenuVisible(true);
   const toggleMenu = () => menuDebounced() && setMenuVisible(!menuVisible);
+  useEffect(() =>
+    setTimeout(() => {
+      // console.log('hi');
+      // setPreload(false);
+    }, 100)
+  );
 
   return (
     <>
       <Helmet
         bodyAttributes={{
-          class: ['', 'is-menu-visible'][Number(menuVisible)],
+          class:
+            (menuVisible ? 'is-menu-visible' : '') + ' ' + preload
+              ? 'is-preload'
+              : '',
         }}>
         <link rel="stylesheet" href="assets/css/main.css" />
+        {/* this doesn't work: */}
+        {/* <noscript>
+          <link rel="stylesheet" href="noscript.css" />
+        </noscript> */}
       </Helmet>
       <div className="wrapper">
         {/* <!-- Header --> */}
@@ -35,7 +49,7 @@ const Layout = ({ children, menuList }) => {
               <span className="symbol">
                 <img src="images/logo.svg" alt="" />
               </span>
-              <span className="title">Phantom</span>
+              <span className="title">Phantom {preload}</span>
             </a>
 
             {/* <!-- Nav --> */}
