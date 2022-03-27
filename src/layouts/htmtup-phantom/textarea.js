@@ -20,14 +20,8 @@ const TextArea = ({ name, id, cols, placeholder, children }) => {
 
   // Auto-size the height of the textarea
   // FIXME: This is not shrinking when the field is cleared like the original does
-  const setTextAreaHeight = event => {
-    console.log(textAreaHeight, event.target, event.target.scrollHeight);
+  const setTextAreaHeight = event =>
     setHeight(event.target.scrollHeight + 'px');
-  };
-  // Monitor events to resize
-  // ['input', 'blur', 'focus'].forEach(eventName =>
-  //   textarea.addEventListener(eventName, event => setHeight(event.target))
-  // );
 
   return (
     <div className="textarea-wrapper">
@@ -42,7 +36,9 @@ const TextArea = ({ name, id, cols, placeholder, children }) => {
         // These are throwing error
         // onBlur={trimElement}
         // onFocus={trimElement}
-        onInput={setTextAreaHeight}>
+        onInput={setTextAreaHeight}
+        onBlur={setTextAreaHeight}
+        onFocus={setTextAreaHeight}>
         {children}
       </textarea>
     </div>
