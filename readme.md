@@ -1,3 +1,18 @@
+# HTML5UP's Phantom theme converting to React/Gatsby
+
+## Status
+
+In-progress; had a partial React conversion, decide to develop in and eventually publish a Gatsby starter repo.
+
+## To do
+
+- What to do with noscript.css ?
+- Figure out if/how I want to provide for SASS changes
+- Move menu back into Layout
+- Finish stuff
+
+<hr>
+
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
