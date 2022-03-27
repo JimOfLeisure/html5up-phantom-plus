@@ -1,8 +1,15 @@
 import React from 'react';
 
-// Tile props for the Phantom theme demo index page
+export const menuData = [
+  { href: '/', content: 'Home' },
+  { href: '/generic', content: 'Ipsum veroeros' },
+  { href: '/generic', content: 'Tempus etiam' },
+  { href: '/generic', content: 'Consequat dolor' },
+  { href: '/elements', content: 'Elements' },
+];
 
-const tileDemoData = [
+// Tile props for the Phantom theme demo index page
+export const tileData = [
   {
     className: 'style1',
     src: 'images/pic01.jpg',
@@ -160,5 +167,3 @@ const tileDemoData = [
     ),
   },
 ];
-
-export default tileDemoData;

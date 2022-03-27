@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useState, useEffect } from 'react';
+import { menuData } from './demo-data';
 
 const Layout = ({ children, menuList }) => {
   const [menuVisible, setMenuVisible] = useState('');
@@ -163,18 +164,11 @@ const Layout = ({ children, menuList }) => {
           <nav id="menu">
             <h2>Menu</h2>
             <ul>
-              <li>
-                <a href="#">menu</a>
-              </li>
-              <li>
-                <a href="#">menu</a>
-              </li>
-              <li>
-                <a href="#">menu</a>
-              </li>
-              <li>
-                <a href="#">menu</a>
-              </li>
+              {menuData.map((e, i) => (
+                <li key={i}>
+                  <a href={e.href}>{e.content}</a>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

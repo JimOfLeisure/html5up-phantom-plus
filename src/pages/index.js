@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../layouts/htmtup-phantom/layout';
 import TileList from '../layouts/htmtup-phantom/tile-list';
 import Tile from '../layouts/htmtup-phantom/tile';
-import tileData from '../layouts/htmtup-phantom/demo-data';
+import { tileData } from '../layouts/htmtup-phantom/demo-data';
 
 const IndexPage = ({ menuList }) => (
   <Layout menuList={menuList}>
