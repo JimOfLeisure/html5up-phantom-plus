@@ -13,17 +13,15 @@ import React from 'react';
 */
 
 const Tile = ({ src, alt, href, title, children }) => (
-  <>
-    <article className="style1">
-      <span className="image">
-        <img src={src} alt={alt} />
-      </span>
-      <a href="generic.html">
-        <h2>{title}</h2>
-        <div className="content">{children}</div>
-      </a>
-    </article>
-  </>
+  <article className="style1">
+    <span className="image">
+      <img src={src} alt={alt} />
+    </span>
+    <a href="generic.html">
+      <h2>{title}</h2>
+      <div className="content">{children}</div>
+    </a>
+  </article>
 );
 
 export default Tile;
