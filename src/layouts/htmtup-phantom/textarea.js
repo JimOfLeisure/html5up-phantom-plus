@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
 const TextArea = ({ name, id, cols, placeholder, children }) => {
-  const [height, setHeight] = useState(59);
+  const [textAreaHeight, setHeight] = useState(59);
 
   const textAreaStyle = {
     overflow: 'hidden',
     resize: 'none',
-    height: height,
   };
 
   // Trim leading and trailing whitespace in textarea on focus change and ctrl-enter
@@ -18,6 +17,18 @@ const TextArea = ({ name, id, cols, placeholder, children }) => {
       trimElement(event.target);
     }
   };
+
+  // Auto-size the height of the textarea
+  // FIXME: This is not shrinking when the field is cleared like the original does
+  const setTextAreaHeight = event => {
+    console.log(textAreaHeight, event.target, event.target.scrollHeight);
+    setHeight(event.target.scrollHeight + 'px');
+  };
+  // Monitor events to resize
+  // ['input', 'blur', 'focus'].forEach(eventName =>
+  //   textarea.addEventListener(eventName, event => setHeight(event.target))
+  // );
+
   return (
     <div className="textarea-wrapper">
       <textarea
@@ -26,12 +37,12 @@ const TextArea = ({ name, id, cols, placeholder, children }) => {
         cols={cols}
         rows="1"
         placeholder={placeholder}
-        style={textAreaStyle}
+        style={{ ...textAreaStyle, height: textAreaHeight }}
         onKeyDown={trimOnCtrlEnter}
         // These are throwing error
         // onBlur={trimElement}
         // onFocus={trimElement}
-      >
+        onInput={setTextAreaHeight}>
         {children}
       </textarea>
     </div>
