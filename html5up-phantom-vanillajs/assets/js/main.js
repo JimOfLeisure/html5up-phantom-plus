@@ -73,9 +73,10 @@ function enhanceForms() {
     });
 
     // Auto-size the height of the textarea
-    // FIXME: This is not shrinking when the field is cleared like the original does
-    const setHeight = element =>
-      (element.style.height = element.scrollHeight + 'px');
+    const setHeight = element => {
+      element.style.height = 'auto';
+      element.style.height = element.scrollHeight + 'px';
+    };
     // Set height on initial load
     setHeight(textarea);
     // Monitor events to resize
