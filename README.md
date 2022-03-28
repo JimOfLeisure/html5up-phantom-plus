@@ -20,12 +20,8 @@ Mostly working well, just minor fixes needed.
 ## To do
 
 - What to do with noscript.scss ?
-- Menu
-  - Possibly second copy of menu in footer (otherwise nav is lost if no script)
-  - Debounce code isn't working
 - Fix TextArea trim on blur and focus
 - Figure out how to make TextArea shrink if text height shrinks
-- Abolish all the `console.log`s (I'm still using them to figure out debouncing)
 
 # Other ports of HTML5UP Phantom
 
