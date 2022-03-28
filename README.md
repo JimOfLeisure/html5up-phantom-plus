@@ -21,7 +21,6 @@ Mostly working well, just minor fixes needed.
 
 - What to do with noscript.scss ?
 - Fix TextArea trim on blur and focus
-- Figure out how to make TextArea shrink if text height shrinks
 
 # Other ports of HTML5UP Phantom
 

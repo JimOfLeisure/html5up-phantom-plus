@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const TextArea = ({ name, id, cols, placeholder, children }) => {
-  const [textAreaHeight, setHeight] = useState('auto');
-
   const textAreaStyle = {
     overflow: 'hidden',
     resize: 'none',
@@ -20,12 +18,7 @@ const TextArea = ({ name, id, cols, placeholder, children }) => {
   };
 
   // Auto-size the height of the textarea
-  // FIXME: This is not shrinking when the field is cleared like the original does
   const setTextAreaHeight = event => {
-    // if (event.target.style.height != textAreaHeight) {
-    //   event.target.style.height = 'auto';
-    // }
-    // setHeight(event.target.scrollHeight + 'px');
     event.target.style.height = 'auto';
     event.target.style.height = event.target.scrollHeight + 'px';
   };
