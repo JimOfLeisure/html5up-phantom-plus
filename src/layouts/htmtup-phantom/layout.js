@@ -4,35 +4,42 @@ import { menuData } from './demo-data';
 import TextArea from './textarea';
 import './sass/main.scss';
 
+let menuIsDebouncing = false;
+
 const Layout = ({ children, menuList }) => {
   const [menuVisible, setMenuVisible] = useState('');
   const [preload, setPreload] = useState('is-preload');
-  const [menuIsDebouncing, setMenuIsDebouncing] = useState(false);
+  // const [menuIsDebouncing, setMenuIsDebouncing] = useState(false);
   const [firstRenderDone, setFirstRenderDone] = useState(false);
 
   const menuDebounced = () => {
     if (!menuIsDebouncing) {
-      console.log('debounce', menuVisible);
-      setTimeout(() => setMenuIsDebouncing(false), 350);
-      setMenuIsDebouncing(true);
+      console.log('debounce', menuIsDebouncing, menuVisible);
+      menuIsDebouncing = true;
+      setTimeout(() => {
+        console.log('should always be true: ', menuIsDebouncing);
+        menuIsDebouncing = false;
+        console.log('timeout complete', menuIsDebouncing);
+      }, 1000);
+      console.log(menuIsDebouncing);
+      console.log('returning true', menuIsDebouncing);
       return true;
     }
-    console.log('debounced call to menuDebounced');
+    console.log('debounced call to menuDebounced', menuIsDebouncing);
     return false;
   };
-  const hideMenu = () => menuDebounced() && setMenuVisible('');
+  const hideMenu = () => (menuDebounced() ? setMenuVisible('') : undefined);
   // const showMenu = () => menuDebounced() && setMenuVisible('is-menu-visible');
   const toggleMenu = () =>
-    menuDebounced() &&
-    setMenuVisible(menuVisible === '' ? 'is-menu-visible' : '');
+    menuDebounced()
+      ? setMenuVisible(menuVisible === '' ? 'is-menu-visible' : '')
+      : undefined;
 
   // Close menu on ESC key pressed
   if (!firstRenderDone) {
     document.addEventListener('keydown', event => {
       if (event.code === 'Escape') {
         hideMenu();
-        console.log('Escape!', event.target);
-        event.stopPropagation();
       }
     });
 
