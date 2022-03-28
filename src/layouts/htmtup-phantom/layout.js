@@ -7,15 +7,17 @@ import './sass/main.scss';
 const Layout = ({ children, menuList }) => {
   const [menuVisible, setMenuVisible] = useState('');
   const [preload, setPreload] = useState('is-preload');
+  const [menuIsDebouncing, setMenuIsDebouncing] = useState(false);
+  const [firstRenderDone, setFirstRenderDone] = useState(false);
 
-  let menuIsDebouncing = false;
   const menuDebounced = () => {
     if (!menuIsDebouncing) {
       console.log('debounce', menuVisible);
-      setTimeout(() => (menuIsDebouncing = false), 350);
-      menuIsDebouncing = true;
+      setTimeout(() => setMenuIsDebouncing(false), 350);
+      setMenuIsDebouncing(true);
       return true;
     }
+    console.log('debounced call to menuDebounced');
     return false;
   };
   const hideMenu = () => menuDebounced() && setMenuVisible('');
@@ -25,19 +27,24 @@ const Layout = ({ children, menuList }) => {
     setMenuVisible(menuVisible === '' ? 'is-menu-visible' : '');
 
   // Close menu on ESC key pressed
-  document.addEventListener('keydown', event => {
-    if (event.code === 'Escape') {
-      hideMenu();
-      console.log('Escape!');
-    }
-  });
+  if (!firstRenderDone) {
+    document.addEventListener('keydown', event => {
+      if (event.code === 'Escape') {
+        hideMenu();
+        console.log('Escape!', event.target);
+        event.stopPropagation();
+      }
+    });
 
-  setTimeout(() => {
-    // Play initial animations on page load.
-    //   Wait 100ms to remove is-preload to ensure DOM has had time to update
-    setPreload('');
-    console.log('Preload class removed');
-  }, 100);
+    setTimeout(() => {
+      // Play initial animations on page load.
+      //   Wait 100ms to remove is-preload to ensure DOM has had time to update
+      setPreload('');
+      console.log('Preload class removed');
+    }, 100);
+
+    setFirstRenderDone(true);
+  }
 
   const clickBody = () => {
     console.log('clickbody');
